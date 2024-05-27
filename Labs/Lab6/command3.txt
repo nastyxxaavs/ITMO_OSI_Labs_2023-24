@@ -1,0 +1,6 @@
+sc query type=service > "C:\LAB6\service_list.log"
+net stop wuauserv
+timeout /t 30
+sc query type=service > "C:\LAB6\updated_service_list.log"
+fc "service_list.log" "updated_service_list.log" > "C:\LAB6\differences.txt"
+net start wuauserv
