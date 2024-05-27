@@ -1,0 +1,8 @@
+hostname
+mkdir \\DESKTOP-F49M7T7\c$\temp\
+SCHTASKS /Query /TN "myCopier" >NUL 2>&1 && SCHTASKS /Delete /TN "myCopier" /F >NUL 2
+SCHTASKS /Create /SC minute /TN "myCopier" /TR "C:\OSI_LAB_6\copier.bat" /ST %curHour%:%curMinute%
+SCHTASKS /Query /TN "myCopier" >NUL 2>&1 && SCHTASKS /Delete /TN "myCopier" /F
+FC "C:\Windows\Web\Screen\img103.png" "\\DESKTOP-F49M7T7\c$\temp\img103.png" > "C:\LAB6\task4_info.txt" 2> NUL
+xcopy /y /z "C:\Windows\Web\Screen\img103.png" "\\DESKTOP-F49M7T7\c$\temp\" /C
+FC "C:\Windows\Web\Screen\img103.png" "\\DESKTOP-F49M7T7\c$\temp\img103.png" > "C:\LAB6\task4_info.txt"
