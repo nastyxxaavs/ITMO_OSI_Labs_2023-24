@@ -1,4 +1,3 @@
-@echo off
 mkdir C:\LAB6
 systeminfo > C:\LAB6\osVersion_info.txt
 wmic logicaldisk get size, freespace, caption > C:\LAB6\disk_info.txt
